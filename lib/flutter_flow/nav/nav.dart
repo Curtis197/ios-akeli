@@ -272,6 +272,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.int,
             ),
           ),
+        ),
+        FFRoute(
+          name: AuthentificationCopyWidget.routeName,
+          path: AuthentificationCopyWidget.routePath,
+          builder: (context, params) => AuthentificationCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
