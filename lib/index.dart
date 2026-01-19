@@ -4,8 +4,6 @@ export '/meal_planner/meal_planner/meal_planner_widget.dart'
     show MealPlannerWidget;
 export '/meal_planner/meal_detail/meal_detail_widget.dart'
     show MealDetailWidget;
-export '/user_authentification/authentification/authentification_widget.dart'
-    show AuthentificationWidget;
 export '/profil_management/profile_setting/profile_setting_widget.dart'
     show ProfileSettingWidget;
 export '/profil_management/notifications/notifications_widget.dart'

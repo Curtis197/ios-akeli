@@ -82,13 +82,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : MealPlannerWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : HomePageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : MealPlannerWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : HomePageWidget(),
         ),
         FFRoute(
           name: HomePageWidget.routeName,
@@ -113,11 +113,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.int,
             ),
           ),
-        ),
-        FFRoute(
-          name: AuthentificationWidget.routeName,
-          path: AuthentificationWidget.routePath,
-          builder: (context, params) => AuthentificationWidget(),
         ),
         FFRoute(
           name: ProfileSettingWidget.routeName,
@@ -448,7 +443,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/mealPlanner';
+            return '/homePage';
           }
           return null;
         },

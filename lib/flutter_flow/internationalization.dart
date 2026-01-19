@@ -816,25 +816,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'wo': '',
     },
   },
-  // Authentification
-  {
-    'hihw5byn': {
-      'fr': 'Button',
-      'bm': '',
-      'de': '',
-      'en': '',
-      'ln': '',
-      'wo': '',
-    },
-    'vfjbf6ge': {
-      'fr': 'Home',
-      'bm': '',
-      'de': '',
-      'en': '',
-      'ln': '',
-      'wo': '',
-    },
-  },
   // ProfileSetting
   {
     'g0c4f2v3': {

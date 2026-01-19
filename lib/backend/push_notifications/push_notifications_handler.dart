@@ -117,7 +117,6 @@ final parametersBuilderMap =
           'mealID': getParameter<int>(data, 'mealID'),
         },
       ),
-  'Authentification': ParameterData.none(),
   'ProfileSetting': ParameterData.none(),
   'Notifications': ParameterData.none(),
   'forgottenPassword': ParameterData.none(),

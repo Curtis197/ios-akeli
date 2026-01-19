@@ -276,7 +276,7 @@ class _ProfileSettingWidgetState extends State<ProfileSettingWidget> {
                             GoRouter.of(context).clearRedirectLocation();
 
                             context.pushNamedAuth(
-                                AuthentificationWidget.routeName,
+                                AuthentificationCopyWidget.routeName,
                                 context.mounted);
                           },
                           text: FFLocalizations.of(context).getText(
