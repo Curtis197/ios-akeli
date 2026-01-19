@@ -1,11 +1,35 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'authentification_widget.dart' show AuthentificationWidget;
 import 'package:flutter/material.dart';
 
 class AuthentificationModel extends FlutterFlowModel<AuthentificationWidget> {
-  @override
-  void initState(BuildContext context) {}
+  ///  State fields for stateful widgets in this page.
+
+  // State field(s) for emailAddress widget.
+  FocusNode? emailAddressFocusNode;
+  TextEditingController? emailAddressTextController;
+  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  // State field(s) for password widget.
+  FocusNode? passwordFocusNode;
+  TextEditingController? passwordTextController;
+  late bool passwordVisibility;
+  String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  UsersRow? newUserSupabase;
 
   @override
-  void dispose() {}
+  void initState(BuildContext context) {
+    passwordVisibility = false;
+  }
+
+  @override
+  void dispose() {
+    emailAddressFocusNode?.dispose();
+    emailAddressTextController?.dispose();
+
+    passwordFocusNode?.dispose();
+    passwordTextController?.dispose();
+  }
 }

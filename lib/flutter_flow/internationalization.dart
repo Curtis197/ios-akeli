@@ -818,7 +818,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Authentification
   {
-    'z3xib02f': {
+    'ypqec2dk': {
       'fr': 'AKELI',
       'bm': '',
       'de': '',
@@ -826,8 +826,56 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ln': '',
       'wo': '',
     },
-    'he18wykv': {
+    'fjsp1r2p': {
       'fr': 'Bienvenue sur Akeli',
+      'bm': '',
+      'de': '',
+      'en': '',
+      'ln': '',
+      'wo': '',
+    },
+    '0dqpapnw': {
+      'fr': 'Heureux de vous revoir ! ',
+      'bm': '',
+      'de': '',
+      'en': '',
+      'ln': '',
+      'wo': '',
+    },
+    'op9vi5dr': {
+      'fr': 'Remplissez les information ci dessous pour acceder à votre compte',
+      'bm': '',
+      'de': '',
+      'en': '',
+      'ln': '',
+      'wo': '',
+    },
+    'bqufcjs6': {
+      'fr': 'Email',
+      'bm': '',
+      'de': '',
+      'en': '',
+      'ln': '',
+      'wo': '',
+    },
+    't5udgwgx': {
+      'fr': 'Password',
+      'bm': '',
+      'de': '',
+      'en': '',
+      'ln': '',
+      'wo': '',
+    },
+    'plwb8r76': {
+      'fr': 'Se connecter',
+      'bm': '',
+      'de': '',
+      'en': '',
+      'ln': '',
+      'wo': '',
+    },
+    'wxi7nod9': {
+      'fr': 'Mot de passe oublié ?',
       'bm': '',
       'de': '',
       'en': '',
