@@ -818,7 +818,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Authentification
   {
-    '4t2zj0iy': {
+    'z3xib02f': {
       'fr': 'AKELI',
       'bm': '',
       'de': '',
@@ -826,7 +826,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ln': '',
       'wo': '',
     },
-    'd5jbjs24': {
+    'he18wykv': {
       'fr': 'Bienvenue sur Akeli',
       'bm': '',
       'de': '',
