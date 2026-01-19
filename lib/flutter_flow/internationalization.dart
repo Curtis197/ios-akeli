@@ -850,22 +850,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ln': '',
       'wo': '',
     },
-    'bqufcjs6': {
-      'fr': 'Email',
-      'bm': '',
-      'de': '',
-      'en': '',
-      'ln': '',
-      'wo': '',
-    },
-    't5udgwgx': {
-      'fr': 'Password',
-      'bm': '',
-      'de': '',
-      'en': '',
-      'ln': '',
-      'wo': '',
-    },
     'plwb8r76': {
       'fr': 'Se connecter',
       'bm': '',
