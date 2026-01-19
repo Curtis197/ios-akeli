@@ -818,16 +818,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Authentification
   {
-    'ypqec2dk': {
-      'fr': 'AKELI',
-      'bm': '',
-      'de': '',
-      'en': '',
-      'ln': '',
-      'wo': '',
-    },
-    'fjsp1r2p': {
-      'fr': 'Bienvenue sur Akeli',
+    'hihw5byn': {
+      'fr': 'Button',
       'bm': '',
       'de': '',
       'en': '',
