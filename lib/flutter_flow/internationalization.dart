@@ -3618,7 +3618,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'wo': '',
     },
   },
-  // AuthentificationCopy
+  // Authentification
   {
     'n9yhwtqs': {
       'fr': 'AKELI',
@@ -3750,6 +3750,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'wo': '',
     },
     'jxjg75q1': {
+      'fr': 'Home',
+      'bm': '',
+      'de': '',
+      'en': '',
+      'ln': '',
+      'wo': '',
+    },
+  },
+  // AuthentificationCopy
+  {
+    'a1jjz2bf': {
+      'fr': 'AKELI',
+      'bm': '',
+      'de': '',
+      'en': '',
+      'ln': '',
+      'wo': '',
+    },
+    'en4t3tui': {
+      'fr': 'Bienvenue sur Akeli',
+      'bm': '',
+      'de': '',
+      'en': '',
+      'ln': '',
+      'wo': '',
+    },
+    'b6yhb01g': {
       'fr': 'Home',
       'bm': '',
       'de': '',

@@ -81,14 +81,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : HomePageWidget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? NavBarPage()
+          : AuthentificationCopyWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : HomePageWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? NavBarPage()
+              : AuthentificationCopyWidget(),
         ),
         FFRoute(
           name: HomePageWidget.routeName,
@@ -268,6 +270,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
+          name: AuthentificationWidget.routeName,
+          path: AuthentificationWidget.routePath,
+          builder: (context, params) => AuthentificationWidget(),
+        ),
+        FFRoute(
           name: AuthentificationCopyWidget.routeName,
           path: AuthentificationCopyWidget.routePath,
           builder: (context, params) => AuthentificationCopyWidget(),
@@ -443,7 +450,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/homePage';
+            return '/authentificationCopy';
           }
           return null;
         },
