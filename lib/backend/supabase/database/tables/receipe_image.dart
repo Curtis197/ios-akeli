@@ -26,8 +26,8 @@ class ReceipeImageRow extends SupabaseDataRow {
   String? get type => getField<String>('type');
   set type(String? value) => setField<String>('type', value);
 
-  double? get index => getField<double>('index');
-  set index(double? value) => setField<double>('index', value);
+  int? get index => getField<int>('index');
+  set index(int? value) => setField<int>('index', value);
 
   int? get temporaryReceipeId => getField<int>('temporary_receipe_id');
   set temporaryReceipeId(int? value) =>

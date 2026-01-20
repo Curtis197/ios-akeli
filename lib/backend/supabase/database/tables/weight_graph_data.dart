@@ -35,19 +35,17 @@ class WeightGraphDataRow extends SupabaseDataRow {
   set weightPiePercentage(double? value) =>
       setField<double>('weight_pie_percentage', value);
 
-  double? get calorieConsumed => getField<double>('calorie_consumed');
-  set calorieConsumed(double? value) =>
-      setField<double>('calorie_consumed', value);
+  int? get calorieConsumed => getField<int>('calorie_consumed');
+  set calorieConsumed(int? value) => setField<int>('calorie_consumed', value);
 
-  double? get targetCalorie => getField<double>('target_calorie');
-  set targetCalorie(double? value) => setField<double>('target_calorie', value);
+  int? get targetCalorie => getField<int>('target_calorie');
+  set targetCalorie(int? value) => setField<int>('target_calorie', value);
 
   double? get calorieProgress => getField<double>('calorie_progress');
   set calorieProgress(double? value) =>
       setField<double>('calorie_progress', value);
 
-  double? get caloriePiePercentage =>
-      getField<double>('calorie_pie_percentage');
-  set caloriePiePercentage(double? value) =>
-      setField<double>('calorie_pie_percentage', value);
+  int? get caloriePiePercentage => getField<int>('calorie_pie_percentage');
+  set caloriePiePercentage(int? value) =>
+      setField<int>('calorie_pie_percentage', value);
 }

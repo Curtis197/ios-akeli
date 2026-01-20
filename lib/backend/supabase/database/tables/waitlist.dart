@@ -22,4 +22,7 @@ class WaitlistRow extends SupabaseDataRow {
 
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
+
+  String? get userType => getField<String>('user_type');
+  set userType(String? value) => setField<String>('user_type', value);
 }

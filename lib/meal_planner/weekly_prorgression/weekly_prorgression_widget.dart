@@ -184,10 +184,12 @@ class _WeeklyProrgressionWidgetState extends State<WeeklyProrgressionWidget>
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
                     child: LinearPercentIndicator(
-                      percent: (annualHouseHoldContainerWeeklyUserTrackRow!
-                              .consumedCalories!) /
-                          ((annualHouseHoldContainerWeeklyUserTrackRow
-                              .targetCalorie!)),
+                      percent: annualHouseHoldContainerWeeklyUserTrackRow!
+                              .consumedCalories!
+                              .toDouble() /
+                          (annualHouseHoldContainerWeeklyUserTrackRow
+                              .targetCalorie!
+                              .toDouble()),
                       width: 310.0,
                       lineHeight: 16.0,
                       animation: true,

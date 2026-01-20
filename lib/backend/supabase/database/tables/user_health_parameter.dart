@@ -38,4 +38,7 @@ class UserHealthParameterRow extends SupabaseDataRow {
 
   String? get activityLevel => getField<String>('activity_level');
   set activityLevel(String? value) => setField<String>('activity_level', value);
+
+  int? get currentWeight => getField<int>('current_weight');
+  set currentWeight(int? value) => setField<int>('current_weight', value);
 }

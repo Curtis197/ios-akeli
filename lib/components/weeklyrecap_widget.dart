@@ -142,8 +142,9 @@ class _WeeklyrecapWidgetState extends State<WeeklyrecapWidget> {
                                     ),
                               ),
                               LinearPercentIndicator(
-                                percent: (widget.weekly!.consumedCalories!) /
-                                    ((widget.weekly!.targetCalorie!)),
+                                percent: widget.weekly!.consumedCalories!
+                                        .toDouble() /
+                                    (widget.weekly!.targetCalorie!.toDouble()),
                                 lineHeight: 15.0,
                                 animation: true,
                                 animateFromLastPercent: true,
