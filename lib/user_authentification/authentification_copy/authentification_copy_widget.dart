@@ -59,55 +59,64 @@ class _AuthentificationCopyWidgetState
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
-              ),
-              Text(
-                FFLocalizations.of(context).getText(
-                  '3s7z2xv0' /* Hello World */,
-                ),
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.poppins(
+                child: Text(
+                  FFLocalizations.of(context).getText(
+                    '3s7z2xv0' /* Hello World */,
+                  ),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        font: GoogleFonts.poppins(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: FlutterFlowTheme.of(context).secondary,
+                        letterSpacing: 0.0,
                         fontWeight:
                             FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                         fontStyle:
                             FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                       ),
-                      letterSpacing: 0.0,
-                      fontWeight:
-                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                    ),
-              ),
-              FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
-                text: FFLocalizations.of(context).getText(
-                  'm2fkqo5g' /* Button */,
                 ),
-                options: FFButtonOptions(
-                  height: 40.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                  iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).secondary,
-                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        font: GoogleFonts.poppins(
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+                child: FFButtonWidget(
+                  onPressed: () {
+                    print('Button pressed ...');
+                  },
+                  text: FFLocalizations.of(context).getText(
+                    'm2fkqo5g' /* Button */,
+                  ),
+                  options: FFButtonOptions(
+                    height: 44.0,
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: FlutterFlowTheme.of(context).secondary,
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          font: GoogleFonts.poppins(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .fontStyle,
+                          ),
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          letterSpacing: 0.0,
                           fontWeight: FlutterFlowTheme.of(context)
                               .titleSmall
                               .fontWeight,
                           fontStyle:
                               FlutterFlowTheme.of(context).titleSmall.fontStyle,
                         ),
-                        color: Colors.white,
-                        letterSpacing: 0.0,
-                        fontWeight:
-                            FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                      ),
-                  elevation: 0.0,
-                  borderRadius: BorderRadius.circular(8.0),
+                    elevation: 0.0,
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
                 ),
               ),
             ],
