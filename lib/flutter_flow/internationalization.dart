@@ -3760,16 +3760,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // AuthentificationCopy
   {
-    'a1jjz2bf': {
-      'fr': 'AKELI',
+    '3s7z2xv0': {
+      'fr': 'Hello World',
       'bm': '',
       'de': '',
       'en': '',
       'ln': '',
       'wo': '',
     },
-    'en4t3tui': {
-      'fr': 'Bienvenue sur Akeli',
+    'm2fkqo5g': {
+      'fr': 'Button',
       'bm': '',
       'de': '',
       'en': '',
