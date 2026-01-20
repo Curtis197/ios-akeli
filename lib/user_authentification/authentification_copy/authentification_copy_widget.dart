@@ -46,7 +46,7 @@ class _AuthentificationCopyWidgetState
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: FlutterFlowTheme.of(context).accent1,
         body: SafeArea(
           top: true,
           child: Column(
@@ -57,14 +57,14 @@ class _AuthentificationCopyWidgetState
                   'eb62w509' /* Hello World */,
                 ),
                 style: FlutterFlowTheme.of(context).displaySmall.override(
-                      font: GoogleFonts.outfit(
+                      font: GoogleFonts.lato(
                         fontWeight: FlutterFlowTheme.of(context)
                             .displaySmall
                             .fontWeight,
                         fontStyle:
                             FlutterFlowTheme.of(context).displaySmall.fontStyle,
                       ),
-                      color: FlutterFlowTheme.of(context).secondary,
+                      color: FlutterFlowTheme.of(context).error,
                       letterSpacing: 0.0,
                       fontWeight:
                           FlutterFlowTheme.of(context).displaySmall.fontWeight,
