@@ -439,7 +439,18 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 30.0, 20.0, 30.0),
                                     child: Text(
-                                      'Bienvenue sur Akeli, ${homePageUsersRow?.userName}',
+                                      '${valueOrDefault<String>(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          frText: 'Bienvenue sur Akeli',
+                                          enText: 'Welcome to Akeli',
+                                          deText: '',
+                                          lnText: '',
+                                          bmText: '',
+                                          woText: '',
+                                        ),
+                                        'Bienvenue sur Akeli',
+                                      )}${homePageUsersRow?.userName}',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .headlineLarge
@@ -468,7 +479,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 30.0, 20.0, 30.0),
                                     child: Text(
-                                      'Bienvenue sur Akeli',
+                                      FFLocalizations.of(context).getText(
+                                        '6067ux2f' /* Bienvenue sur Akeli */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .headlineLarge
@@ -2721,7 +2734,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             children: [
-                                                                              if (_model.radioButtonValue == 'Tous')
+                                                                              if (_model.radioButtonValue ==
+                                                                                  FFLocalizations.of(context).getVariableText(
+                                                                                    frText: 'Tous',
+                                                                                    enText: 'All',
+                                                                                    deText: '',
+                                                                                    lnText: 'Alle',
+                                                                                    bmText: '',
+                                                                                    woText: '',
+                                                                                  ))
                                                                                 FutureBuilder<List<ShoppingIngredientRow>>(
                                                                                   future: (_model.requestCompleter8 ??= Completer<List<ShoppingIngredientRow>>()
                                                                                         ..complete(ShoppingIngredientTable().queryRows(
@@ -2789,7 +2810,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                                               ),
                                                                                             ].divide(SizedBox(width: 5.0)),
                                                                                           ),
-                                                                                          if (_model.radioButtonValue == 'Tous')
+                                                                                          if (_model.radioButtonValue ==
+                                                                                              FFLocalizations.of(context).getVariableText(
+                                                                                                frText: 'Tous',
+                                                                                                enText: 'All',
+                                                                                                deText: 'Alle',
+                                                                                                lnText: '',
+                                                                                                bmText: '',
+                                                                                                woText: '',
+                                                                                              ))
                                                                                             Builder(
                                                                                               builder: (context) {
                                                                                                 final tousContainerVar = tousContainerShoppingIngredientRowList.toList().take(5).toList();
@@ -2938,7 +2967,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                                     );
                                                                                   },
                                                                                 ),
-                                                                              if (_model.radioButtonValue == 'Déjà acheté')
+                                                                              if (_model.radioButtonValue ==
+                                                                                  FFLocalizations.of(context).getVariableText(
+                                                                                    frText: 'Déjà acheté',
+                                                                                    enText: 'Already bought',
+                                                                                    deText: '',
+                                                                                    lnText: '',
+                                                                                    bmText: '',
+                                                                                    woText: '',
+                                                                                  ))
                                                                                 FutureBuilder<List<ShoppingIngredientRow>>(
                                                                                   future: (_model.requestCompleter5 ??= Completer<List<ShoppingIngredientRow>>()
                                                                                         ..complete(ShoppingIngredientTable().queryRows(
@@ -3164,7 +3201,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                                     );
                                                                                   },
                                                                                 ),
-                                                                              if (_model.radioButtonValue == 'Reste à acheter')
+                                                                              if (_model.radioButtonValue ==
+                                                                                  FFLocalizations.of(context).getVariableText(
+                                                                                    frText: 'Reste à acheter',
+                                                                                    enText: 'Still to buy',
+                                                                                    deText: '',
+                                                                                    lnText: '',
+                                                                                    bmText: '',
+                                                                                    woText: '',
+                                                                                  ))
                                                                                 FutureBuilder<List<ShoppingIngredientRow>>(
                                                                                   future: (_model.requestCompleter7 ??= Completer<List<ShoppingIngredientRow>>()
                                                                                         ..complete(ShoppingIngredientTable().queryRows(

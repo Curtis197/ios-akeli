@@ -150,6 +150,14 @@ bool _isSupportedLocale(Locale locale) {
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // HomePage
   {
+    '6067ux2f': {
+      'fr': 'Bienvenue sur Akeli',
+      'bm': '',
+      'de': 'Willkommen bei Akeli',
+      'en': 'Welcome to Akeli',
+      'ln': '',
+      'wo': '',
+    },
     'd9cj8ct8': {
       'fr': 'Mettre à jour son poids',
       'bm': '',
@@ -313,7 +321,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'v5u29a74': {
       'fr': 'Toutes les nouvelles recettes selectionnées pour vous',
       'bm': '',
-      'de': 'Alle neuen Rezepte, die wir für Sie ausgewählt haben',
+      'de': 'Alle neuen Rezepte, die für Sie ausgewählt wurden',
       'en': 'All the new recipes selected for you',
       'ln': '',
       'wo': '',

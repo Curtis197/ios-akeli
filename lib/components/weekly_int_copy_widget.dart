@@ -117,13 +117,27 @@ class _WeeklyIntCopyWidgetState extends State<WeeklyIntCopyWidget> {
                               : null;
 
                           return Text(
-                            'Du ${dateTimeFormat(
+                            '${FFLocalizations.of(context).getVariableText(
+                              frText: 'Du',
+                              enText: 'From',
+                              deText: '',
+                              lnText: '',
+                              bmText: '',
+                              woText: '',
+                            )}${dateTimeFormat(
                               "MMMEd",
-                              textMealPlanRow?.startDate,
+                              widget.weeklyUserTrack?.startDate,
                               locale: FFLocalizations.of(context).languageCode,
-                            )} Au ${dateTimeFormat(
+                            )}${FFLocalizations.of(context).getVariableText(
+                              frText: 'Au',
+                              enText: 'To',
+                              deText: '',
+                              lnText: '',
+                              bmText: '',
+                              woText: '',
+                            )}${dateTimeFormat(
                               "MMMEd",
-                              textMealPlanRow?.endDate,
+                              widget.weeklyUserTrack?.endDate,
                               locale: FFLocalizations.of(context).languageCode,
                             )}',
                             style: FlutterFlowTheme.of(context)

@@ -682,13 +682,12 @@ class _AuthentificationWidgetState extends State<AuthentificationWidget>
                                                       contentPadding:
                                                           EdgeInsets.all(24.0),
                                                       suffixIcon: InkWell(
-                                                        onTap: () =>
-                                                            safeSetState(
-                                                          () => _model
+                                                        onTap: () async {
+                                                          safeSetState(() => _model
                                                                   .passwordCreateVisibility =
                                                               !_model
-                                                                  .passwordCreateVisibility,
-                                                        ),
+                                                                  .passwordCreateVisibility);
+                                                        },
                                                         focusNode: FocusNode(
                                                             skipTraversal:
                                                                 true),
@@ -846,13 +845,12 @@ class _AuthentificationWidgetState extends State<AuthentificationWidget>
                                                       contentPadding:
                                                           EdgeInsets.all(24.0),
                                                       suffixIcon: InkWell(
-                                                        onTap: () =>
-                                                            safeSetState(
-                                                          () => _model
+                                                        onTap: () async {
+                                                          safeSetState(() => _model
                                                                   .passwordConfirmVisibility =
                                                               !_model
-                                                                  .passwordConfirmVisibility,
-                                                        ),
+                                                                  .passwordConfirmVisibility);
+                                                        },
                                                         focusNode: FocusNode(
                                                             skipTraversal:
                                                                 true),
@@ -1450,13 +1448,12 @@ class _AuthentificationWidgetState extends State<AuthentificationWidget>
                                                                   0.0,
                                                                   24.0),
                                                       suffixIcon: InkWell(
-                                                        onTap: () =>
-                                                            safeSetState(
-                                                          () => _model
+                                                        onTap: () async {
+                                                          safeSetState(() => _model
                                                                   .passwordVisibility =
                                                               !_model
-                                                                  .passwordVisibility,
-                                                        ),
+                                                                  .passwordVisibility);
+                                                        },
                                                         focusNode: FocusNode(
                                                             skipTraversal:
                                                                 true),
