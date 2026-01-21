@@ -35,8 +35,8 @@ class UserTrackRow extends SupabaseDataRow {
   double? get totalCalories => getField<double>('total_calories');
   set totalCalories(double? value) => setField<double>('total_calories', value);
 
-  double? get calorieLeft => getField<double>('calorie_left');
-  set calorieLeft(double? value) => setField<double>('calorie_left', value);
+  int? get calorieLeft => getField<int>('calorie_left');
+  set calorieLeft(int? value) => setField<int>('calorie_left', value);
 
   double get mealConsumed => getField<double>('meal_consumed')!;
   set mealConsumed(double value) => setField<double>('meal_consumed', value);

@@ -152,7 +152,7 @@ class _DailyRecapWidgetState extends State<DailyRecapWidget> {
                                     ),
                               ),
                               Text(
-                                '${functions.smartFormatNumber(widget.track?.consumedCalories)} kcal / ${functions.smartFormatNumber(widget.track?.targetCalorie)} kcal',
+                                '${functions.smartFormatNumber(widget.track?.consumedCalories?.toDouble())} kcal / ${functions.smartFormatNumber(widget.track?.targetCalorie?.toDouble())} kcal',
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
@@ -176,12 +176,15 @@ class _DailyRecapWidgetState extends State<DailyRecapWidget> {
                                     ),
                               ),
                               LinearPercentIndicator(
-                                percent: (((widget.track!.consumedCalories!)) /
-                                            ((widget
-                                                .track!.targetCalorie!))) <=
+                                percent: ((widget.track!.consumedCalories!
+                                                .toDouble()) /
+                                            (widget.track!.targetCalorie!
+                                                .toDouble())) <=
                                         1.0
-                                    ? (((widget.track!.consumedCalories!)) /
-                                        ((widget.track!.targetCalorie!)))
+                                    ? ((widget.track!.consumedCalories!
+                                            .toDouble()) /
+                                        (widget.track!.targetCalorie!
+                                            .toDouble()))
                                     : 1.0,
                                 lineHeight: 15.0,
                                 animation: true,
@@ -244,7 +247,7 @@ class _DailyRecapWidgetState extends State<DailyRecapWidget> {
                                     ),
                               ),
                               Text(
-                                '${functions.smartFormatNumber(widget.track?.consumedProtein)} g',
+                                '${functions.smartFormatNumber(widget.track?.consumedProtein?.toDouble())} g',
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -312,7 +315,7 @@ class _DailyRecapWidgetState extends State<DailyRecapWidget> {
                                     ),
                               ),
                               Text(
-                                '${functions.smartFormatNumber(widget.track?.consumedCarbs)} g',
+                                '${functions.smartFormatNumber(widget.track?.consumedCarbs?.toDouble())} g',
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -380,7 +383,7 @@ class _DailyRecapWidgetState extends State<DailyRecapWidget> {
                                     ),
                               ),
                               Text(
-                                '${functions.smartFormatNumber(widget.track?.consumedFat)} g',
+                                '${functions.smartFormatNumber(widget.track?.consumedFat?.toDouble())} g',
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
