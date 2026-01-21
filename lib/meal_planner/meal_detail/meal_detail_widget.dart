@@ -1567,20 +1567,37 @@ class _MealDetailWidgetState extends State<MealDetailWidget> {
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
-                                                        Expanded(
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              listViewMealIngredientsRow
-                                                                  .name,
-                                                              'name',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .titleMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
+                                                        if (listViewMealIngredientsRow
+                                                                .title ??
+                                                            true)
+                                                          Expanded(
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                listViewMealIngredientsRow
+                                                                    .name,
+                                                                'name',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondary,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight: FlutterFlowTheme.of(
                                                                             context)
                                                                         .titleMedium
@@ -1590,22 +1607,8 @@ class _MealDetailWidgetState extends State<MealDetailWidget> {
                                                                         .titleMedium
                                                                         .fontStyle,
                                                                   ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondary,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                            ),
                                                           ),
-                                                        ),
                                                       ].divide(SizedBox(
                                                           width: 10.0)),
                                                     ),

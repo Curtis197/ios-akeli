@@ -297,32 +297,19 @@ String? smartFormatNumber(double? value) {
 }
 
 double autoRoundIngredient(double quantity) {
-  // Fraction rounding pour < 1
+  // Cas spécial : 0 reste 0
+  if (quantity <= 0) {
+    return 0.0;
+  }
+
+  // Pour < 1, arrondir à 0.5 (demi) avec MINIMUM 0.5
   if (quantity < 1) {
-    final fractions = [
-      0.0,
-      1 / 8,
-      1 / 4,
-      1 / 3,
-      1 / 2,
-      2 / 3,
-      3 / 4,
-      7 / 8,
-      1.0
-    ];
-
-    double closest = fractions[0];
-    double minDiff = (quantity - closest).abs();
-
-    for (var fraction in fractions) {
-      final diff = (quantity - fraction).abs();
-      if (diff < minDiff) {
-        minDiff = diff;
-        closest = fraction;
-      }
+    // Si entre 0 et 0.5 (exclus) → forcer à 0.5
+    if (quantity < 0.5) {
+      return 0.5;
     }
-
-    return closest;
+    // Sinon arrondir normalement à 0.5
+    return (quantity * 2).round() / 2;
   }
   // Auto rounding pour >= 1
   else if (quantity < 5) {

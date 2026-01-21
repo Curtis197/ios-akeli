@@ -442,8 +442,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       '${valueOrDefault<String>(
                                         FFLocalizations.of(context)
                                             .getVariableText(
-                                          frText: 'Bienvenue sur Akeli',
-                                          enText: 'Welcome to Akeli',
+                                          frText: 'Bienvenue sur Akeli  ',
+                                          enText: 'Welcome to Akeli  ',
                                           deText: '',
                                           lnText: '',
                                           bmText: '',
