@@ -511,25 +511,13 @@ class _ShoppingListWidgetState extends State<ShoppingListWidget> {
                                                                             MainAxisSize.max,
                                                                         children:
                                                                             [
-                                                                          Text(
-                                                                            valueOrDefault<String>(
-                                                                              functions.newCustomFunction(tousContainerVarItem.quantity).toString(),
-                                                                              '0',
-                                                                            ),
-                                                                            style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  font: GoogleFonts.poppins(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                                  ),
-                                                                                  letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                                ),
-                                                                          ),
-                                                                          if ((tousContainerVarItem.unit != null && tousContainerVarItem.unit != '') &&
-                                                                              (tousContainerVarItem.unit != 'sans unité'))
+                                                                          if (tousContainerVarItem.quantity !=
+                                                                              null)
                                                                             Text(
-                                                                              tousContainerVarItem.unit!,
+                                                                              valueOrDefault<String>(
+                                                                                functions.formatIngredientQuantity(tousContainerVarItem.quantity, tousContainerVarItem.unit),
+                                                                                '1 g',
+                                                                              ),
                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                     font: GoogleFonts.poppins(
                                                                                       fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
@@ -879,29 +867,13 @@ class _ShoppingListWidgetState extends State<ShoppingListWidget> {
                                                                               .max,
                                                                       children:
                                                                           [
-                                                                        Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            functions.newCustomFunction(acheteContainerVarItem.quantity).toString(),
-                                                                            '0',
-                                                                          ),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .labelMedium
-                                                                              .override(
-                                                                                font: GoogleFonts.poppins(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                                ),
-                                                                                letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                              ),
-                                                                        ),
-                                                                        if ((acheteContainerVarItem.unit != null && acheteContainerVarItem.unit != '') &&
-                                                                            (acheteContainerVarItem.unit !=
-                                                                                'sans unité'))
+                                                                        if (acheteContainerVarItem.quantity !=
+                                                                            null)
                                                                           Text(
-                                                                            acheteContainerVarItem.unit!,
+                                                                            valueOrDefault<String>(
+                                                                              functions.formatIngredientQuantity(acheteContainerVarItem.quantity, acheteContainerVarItem.unit),
+                                                                              '1 g',
+                                                                            ),
                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                   font: GoogleFonts.poppins(
                                                                                     fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
@@ -1265,9 +1237,12 @@ class _ShoppingListWidgetState extends State<ShoppingListWidget> {
                                                                       children:
                                                                           [
                                                                         Text(
-                                                                          functions
-                                                                              .newCustomFunction(restantContainerVarItem.quantity)
-                                                                              .toString(),
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            functions.formatIngredientQuantity(restantContainerVarItem.quantity,
+                                                                                restantContainerVarItem.unit),
+                                                                            '1 g',
+                                                                          ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelMedium
                                                                               .override(
@@ -1280,22 +1255,6 @@ class _ShoppingListWidgetState extends State<ShoppingListWidget> {
                                                                                 fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                               ),
                                                                         ),
-                                                                        if (restantContainerVarItem.unit !=
-                                                                                null &&
-                                                                            restantContainerVarItem.unit !=
-                                                                                '')
-                                                                          Text(
-                                                                            restantContainerVarItem.unit!,
-                                                                            style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  font: GoogleFonts.poppins(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                                  ),
-                                                                                  letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                                ),
-                                                                          ),
                                                                         Text(
                                                                           valueOrDefault<
                                                                               String>(

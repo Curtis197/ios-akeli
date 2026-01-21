@@ -2851,21 +2851,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                                                                   child: Row(
                                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                                     children: [
-                                                                                                                      Text(
-                                                                                                                        functions.newCustomFunction(tousContainerVarItem.quantity).toString(),
-                                                                                                                        style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                                              font: GoogleFonts.poppins(
-                                                                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                                                                              ),
-                                                                                                                              letterSpacing: 0.0,
-                                                                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                                                                            ),
-                                                                                                                      ),
-                                                                                                                      if ((tousContainerVarItem.unit != null && tousContainerVarItem.unit != '') && (tousContainerVarItem.unit != 'sans unité'))
+                                                                                                                      if (tousContainerVarItem.quantity != null)
                                                                                                                         Text(
-                                                                                                                          tousContainerVarItem.unit!,
+                                                                                                                          valueOrDefault<String>(
+                                                                                                                            functions.formatIngredientQuantity(tousContainerVarItem.quantity, tousContainerVarItem.unit),
+                                                                                                                            '1 g',
+                                                                                                                          ),
                                                                                                                           style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                                 font: GoogleFonts.poppins(
                                                                                                                                   fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
@@ -3086,20 +3077,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                                                                   children: [
                                                                                                                     if (acheteContainerVarItem.quantity != null)
                                                                                                                       Text(
-                                                                                                                        functions.newCustomFunction(acheteContainerVarItem.quantity).toString(),
-                                                                                                                        style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                                              font: GoogleFonts.poppins(
-                                                                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                                                                              ),
-                                                                                                                              letterSpacing: 0.0,
-                                                                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                                                                            ),
-                                                                                                                      ),
-                                                                                                                    if ((acheteContainerVarItem.unit != null && acheteContainerVarItem.unit != '') && (acheteContainerVarItem.unit != 'sans unité'))
-                                                                                                                      Text(
-                                                                                                                        acheteContainerVarItem.unit!,
+                                                                                                                        valueOrDefault<String>(
+                                                                                                                          functions.formatIngredientQuantity(acheteContainerVarItem.quantity, acheteContainerVarItem.unit),
+                                                                                                                          '1 g',
+                                                                                                                        ),
                                                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                               font: GoogleFonts.poppins(
                                                                                                                                 fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
@@ -3319,7 +3300,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                                                                   children: [
                                                                                                                     if (restantContainerVarItem.quantity != null)
                                                                                                                       Text(
-                                                                                                                        functions.newCustomFunction(restantContainerVarItem.quantity).toString(),
+                                                                                                                        valueOrDefault<String>(
+                                                                                                                          functions.formatIngredientQuantity(restantContainerVarItem.quantity, restantContainerVarItem.unit),
+                                                                                                                          '1 g',
+                                                                                                                        ),
                                                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                               font: GoogleFonts.poppins(
                                                                                                                                 fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
