@@ -155,8 +155,8 @@ class _WeeklyProrgressionWidgetState extends State<WeeklyProrgressionWidget>
                   ),
                   Text(
                     '${FFLocalizations.of(context).getVariableText(
-                      frText: 'Du ',
-                      enText: 'From ',
+                      frText: 'Du  ',
+                      enText: 'From  ',
                       deText: '',
                       lnText: '',
                       bmText: '',
@@ -166,8 +166,8 @@ class _WeeklyProrgressionWidgetState extends State<WeeklyProrgressionWidget>
                       annualHouseHoldContainerWeeklyUserTrackRow?.startDate,
                       locale: FFLocalizations.of(context).languageCode,
                     )}${FFLocalizations.of(context).getVariableText(
-                      frText: 'Au ',
-                      enText: 'To ',
+                      frText: '  au   ',
+                      enText: '  to  ',
                       deText: '',
                       lnText: '',
                       bmText: '',
@@ -244,7 +244,7 @@ class _WeeklyProrgressionWidgetState extends State<WeeklyProrgressionWidget>
                         ),
                       ),
                       Text(
-                        'de${annualHouseHoldContainerWeeklyUserTrackRow.targetCalorie?.toString()} kcal',
+                        'de  ${annualHouseHoldContainerWeeklyUserTrackRow.targetCalorie?.toString()}  kcal',
                         style: FlutterFlowTheme.of(context)
                             .titleMedium
                             .override(

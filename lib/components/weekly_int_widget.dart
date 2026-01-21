@@ -112,11 +112,25 @@ class _WeeklyIntWidgetState extends State<WeeklyIntWidget> {
                               : null;
 
                           return Text(
-                            'Du ${dateTimeFormat(
+                            '${FFLocalizations.of(context).getVariableText(
+                              frText: 'Du  ',
+                              enText: 'From  ',
+                              deText: 'Aus  ',
+                              lnText: '',
+                              bmText: '',
+                              woText: '',
+                            )}${dateTimeFormat(
                               "MMMEd",
                               textMealPlanRow?.startDate,
                               locale: FFLocalizations.of(context).languageCode,
-                            )} Au ${dateTimeFormat(
+                            )}${FFLocalizations.of(context).getVariableText(
+                              frText: '  au  ',
+                              enText: '  to  ',
+                              deText: '',
+                              lnText: '',
+                              bmText: '',
+                              woText: '',
+                            )}${dateTimeFormat(
                               "MMMEd",
                               textMealPlanRow?.endDate,
                               locale: FFLocalizations.of(context).languageCode,

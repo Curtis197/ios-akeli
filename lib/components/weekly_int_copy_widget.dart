@@ -118,8 +118,8 @@ class _WeeklyIntCopyWidgetState extends State<WeeklyIntCopyWidget> {
 
                           return Text(
                             '${FFLocalizations.of(context).getVariableText(
-                              frText: 'Du ',
-                              enText: 'From ',
+                              frText: 'Du  ',
+                              enText: 'From  ',
                               deText: '',
                               lnText: '',
                               bmText: '',
@@ -129,8 +129,8 @@ class _WeeklyIntCopyWidgetState extends State<WeeklyIntCopyWidget> {
                               widget.weeklyUserTrack?.startDate,
                               locale: FFLocalizations.of(context).languageCode,
                             )}${FFLocalizations.of(context).getVariableText(
-                              frText: 'Au ',
-                              enText: 'To ',
+                              frText: '  au  ',
+                              enText: '  to  ',
                               deText: '',
                               lnText: '',
                               bmText: '',

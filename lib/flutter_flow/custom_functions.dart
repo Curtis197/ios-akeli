@@ -255,29 +255,26 @@ List<dynamic>? restrictListJson(List<dynamic>? list) {
 }
 
 String? formatIngredientQuantity(
-  double? value,
+  double? quantity,
   String? unit,
 ) {
-  if (value == null) return '0';
+  if (quantity == null) return '0';
 
+  // Arrondir automatiquement
+  final roundedQuantity = autoRoundIngredient(quantity);
+
+  // Formater
   String formattedValue;
 
-  // Si c'est un entier (2.0, 5.0, etc.)
-  if (value == value.toInt()) {
-    formattedValue = value.toInt().toString();
-  }
-  // Sinon garde les décimales (max 2)
-  else {
-    formattedValue = value.toStringAsFixed(2);
-
-    // Supprimer les zéros inutiles à droite (2.50 → 2.5)
+  if (roundedQuantity == roundedQuantity.toInt()) {
+    formattedValue = roundedQuantity.toInt().toString();
+  } else {
+    formattedValue = roundedQuantity.toStringAsFixed(2);
     formattedValue = formattedValue.replaceAll(RegExp(r'0*$'), '');
-
-    // Supprimer le point si plus de décimales (2. → 2)
     formattedValue = formattedValue.replaceAll(RegExp(r'\.$'), '');
   }
 
-  // Ajouter l'unité si présente
+  // Ajouter l'unité
   if (unit != null && unit.isNotEmpty) {
     return '$formattedValue $unit';
   }
@@ -297,4 +294,48 @@ String? smartFormatNumber(double? value) {
   formatted = formatted.replaceAll(RegExp(r'\.$'), '');
 
   return formatted;
+}
+
+double autoRoundIngredient(double quantity) {
+  // Fraction rounding pour < 1
+  if (quantity < 1) {
+    final fractions = [
+      0.0,
+      1 / 8,
+      1 / 4,
+      1 / 3,
+      1 / 2,
+      2 / 3,
+      3 / 4,
+      7 / 8,
+      1.0
+    ];
+
+    double closest = fractions[0];
+    double minDiff = (quantity - closest).abs();
+
+    for (var fraction in fractions) {
+      final diff = (quantity - fraction).abs();
+      if (diff < minDiff) {
+        minDiff = diff;
+        closest = fraction;
+      }
+    }
+
+    return closest;
+  }
+  // Auto rounding pour >= 1
+  else if (quantity < 5) {
+    return (quantity * 2).round() / 2;
+  } else if (quantity < 20) {
+    return quantity.roundToDouble();
+  } else if (quantity < 50) {
+    return ((quantity / 5).round() * 5).toDouble();
+  } else if (quantity < 100) {
+    return ((quantity / 10).round() * 10).toDouble();
+  } else if (quantity < 500) {
+    return ((quantity / 25).round() * 25).toDouble();
+  } else {
+    return ((quantity / 50).round() * 50).toDouble();
+  }
 }
