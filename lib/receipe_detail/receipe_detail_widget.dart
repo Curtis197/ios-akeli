@@ -10,6 +10,7 @@ import '/home_page/comment_thread/comment_thread_widget.dart';
 import '/meal_planner/add_new_meal/add_new_meal_widget.dart';
 import '/recipe_management/add_comment/add_comment_widget.dart';
 import '/recipe_management/similar_receipe/similar_receipe_widget.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -459,7 +460,7 @@ class _ReceipeDetailWidgetState extends State<ReceipeDetailWidget> {
                                                                           8.0,
                                                                           0.0),
                                                               child: Text(
-                                                                '${containerReceipeMacroRow?.quantity?.toString()} kcal',
+                                                                '${functions.smartFormatNumber(containerReceipeMacroRow?.quantity)} kcal',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
@@ -588,7 +589,7 @@ class _ReceipeDetailWidgetState extends State<ReceipeDetailWidget> {
                                                                           8.0,
                                                                           0.0),
                                                               child: Text(
-                                                                '${containerReceipeMacroRow?.quantity?.toString()} g protéine',
+                                                                '${functions.smartFormatNumber(containerReceipeMacroRow?.quantity)} g protéine',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
@@ -717,7 +718,7 @@ class _ReceipeDetailWidgetState extends State<ReceipeDetailWidget> {
                                                                           8.0,
                                                                           0.0),
                                                               child: Text(
-                                                                '${containerReceipeMacroRow?.quantity?.toString()} g de glucide',
+                                                                '${functions.smartFormatNumber(containerReceipeMacroRow?.quantity)} g de glucide',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
@@ -846,7 +847,7 @@ class _ReceipeDetailWidgetState extends State<ReceipeDetailWidget> {
                                                                           8.0,
                                                                           0.0),
                                                               child: Text(
-                                                                '${containerReceipeMacroRow?.quantity?.toString()} g de lipide',
+                                                                '${functions.smartFormatNumber(containerReceipeMacroRow?.quantity)} g de lipide',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
@@ -1879,6 +1880,7 @@ class _ReceipeDetailWidgetState extends State<ReceipeDetailWidget> {
 
                                         return ListView.separated(
                                           padding: EdgeInsets.zero,
+                                          primary: false,
                                           shrinkWrap: true,
                                           scrollDirection: Axis.vertical,
                                           itemCount:
@@ -1927,51 +1929,12 @@ class _ReceipeDetailWidgetState extends State<ReceipeDetailWidget> {
                                                               Text(
                                                                 valueOrDefault<
                                                                     String>(
-                                                                  listViewIngredientsRow
-                                                                      .quantity
-                                                                      ?.toString(),
-                                                                  '1',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleMedium
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleMedium
-                                                                            .fontStyle,
-                                                                      ),
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondary,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                              ),
-                                                            if (listViewIngredientsRow
-                                                                        .unit !=
-                                                                    null &&
-                                                                listViewIngredientsRow
-                                                                        .unit !=
-                                                                    '')
-                                                              Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  listViewIngredientsRow
-                                                                      .unit,
-                                                                  'g',
+                                                                  functions.formatIngredientQuantity(
+                                                                      listViewIngredientsRow
+                                                                          .quantity,
+                                                                      listViewIngredientsRow
+                                                                          .unit),
+                                                                  '1 g',
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -2048,20 +2011,34 @@ class _ReceipeDetailWidgetState extends State<ReceipeDetailWidget> {
                                                               CrossAxisAlignment
                                                                   .start,
                                                           children: [
-                                                            Expanded(
-                                                              child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  listViewIngredientsRow
-                                                                      .name,
-                                                                  'title',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleMedium
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                            if (listViewIngredientsRow
+                                                                    .title ??
+                                                                true)
+                                                              Expanded(
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    listViewIngredientsRow
+                                                                        .name,
+                                                                    'title',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMedium
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondary,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .titleMedium
                                                                             .fontWeight,
@@ -2069,22 +2046,8 @@ class _ReceipeDetailWidgetState extends State<ReceipeDetailWidget> {
                                                                             .titleMedium
                                                                             .fontStyle,
                                                                       ),
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondary,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium
-                                                                          .fontStyle,
-                                                                    ),
+                                                                ),
                                                               ),
-                                                            ),
                                                           ].divide(SizedBox(
                                                               width: 10.0)),
                                                         ),
@@ -2161,6 +2124,7 @@ class _ReceipeDetailWidgetState extends State<ReceipeDetailWidget> {
 
                                         return ListView.separated(
                                           padding: EdgeInsets.zero,
+                                          primary: false,
                                           shrinkWrap: true,
                                           scrollDirection: Axis.vertical,
                                           itemCount: listViewStepRowList.length,
@@ -2288,20 +2252,34 @@ class _ReceipeDetailWidgetState extends State<ReceipeDetailWidget> {
                                                               CrossAxisAlignment
                                                                   .start,
                                                           children: [
-                                                            Expanded(
-                                                              child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  listViewStepRow
-                                                                      .text,
-                                                                  'content',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleMedium
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                            if (listViewStepRow
+                                                                    .title ??
+                                                                true)
+                                                              Expanded(
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    listViewStepRow
+                                                                        .text,
+                                                                    'content',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMedium
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .tertiary,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .titleMedium
                                                                             .fontWeight,
@@ -2309,22 +2287,8 @@ class _ReceipeDetailWidgetState extends State<ReceipeDetailWidget> {
                                                                             .titleMedium
                                                                             .fontStyle,
                                                                       ),
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .tertiary,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium
-                                                                          .fontStyle,
-                                                                    ),
+                                                                ),
                                                               ),
-                                                            ),
                                                           ].divide(SizedBox(
                                                               width: 10.0)),
                                                         ),

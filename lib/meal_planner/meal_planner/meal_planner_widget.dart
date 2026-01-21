@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/meal_planner/add_snack/add_snack_widget.dart';
 import '/meal_planner/weekly_prorgression/weekly_prorgression_widget.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1327,10 +1328,7 @@ class _MealPlannerWidgetState extends State<MealPlannerWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Text(
-                                                                                                  '${valueOrDefault<String>(
-                                                                                                    mondayMealItem.adjustedCalories?.toString(),
-                                                                                                    '0',
-                                                                                                  )} kcal',
+                                                                                                  '${functions.smartFormatNumber(mondayMealItem.adjustedCalories)} kcal',
                                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                         font: GoogleFonts.poppins(
                                                                                                           fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
@@ -1952,10 +1950,7 @@ class _MealPlannerWidgetState extends State<MealPlannerWidget>
                                                                                                 ),
                                                                                               ),
                                                                                               Text(
-                                                                                                '${valueOrDefault<String>(
-                                                                                                  mondayMealItem.adjustedCalories?.toString(),
-                                                                                                  '0',
-                                                                                                )} kcal',
+                                                                                                '${functions.smartFormatNumber(mondayMealItem.adjustedCalories)} kcal',
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                       font: GoogleFonts.poppins(
                                                                                                         fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
@@ -2570,10 +2565,7 @@ class _MealPlannerWidgetState extends State<MealPlannerWidget>
                                                                                                     ),
                                                                                               ),
                                                                                               Text(
-                                                                                                '${valueOrDefault<String>(
-                                                                                                  mondayMealItem.adjustedCalories?.toString(),
-                                                                                                  '0',
-                                                                                                )} kcal',
+                                                                                                '${functions.smartFormatNumber(mondayMealItem.adjustedCalories)} kcal',
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                       font: GoogleFonts.poppins(
                                                                                                         fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
@@ -3192,10 +3184,7 @@ class _MealPlannerWidgetState extends State<MealPlannerWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Text(
-                                                                                                  '${valueOrDefault<String>(
-                                                                                                    mondayMealItem.adjustedCalories?.toString(),
-                                                                                                    '0',
-                                                                                                  )} kcal',
+                                                                                                  '${functions.smartFormatNumber(mondayMealItem.adjustedCalories)} kcal',
                                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                         font: GoogleFonts.poppins(
                                                                                                           fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
@@ -3816,10 +3805,7 @@ class _MealPlannerWidgetState extends State<MealPlannerWidget>
                                                                                                     ),
                                                                                               ),
                                                                                               Text(
-                                                                                                '${valueOrDefault<String>(
-                                                                                                  mondayMealItem.adjustedCalories?.toString(),
-                                                                                                  '0',
-                                                                                                )} kcal',
+                                                                                                '${functions.smartFormatNumber(mondayMealItem.adjustedCalories)} kcal',
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                       font: GoogleFonts.poppins(
                                                                                                         fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
@@ -4440,10 +4426,7 @@ class _MealPlannerWidgetState extends State<MealPlannerWidget>
                                                                                                 ),
                                                                                               ),
                                                                                               Text(
-                                                                                                '${valueOrDefault<String>(
-                                                                                                  mondayMealItem.adjustedCalories?.toString(),
-                                                                                                  '0',
-                                                                                                )} kcal',
+                                                                                                '${functions.smartFormatNumber(mondayMealItem.adjustedCalories)} kcal',
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                       font: GoogleFonts.poppins(
                                                                                                         fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
@@ -5063,10 +5046,7 @@ class _MealPlannerWidgetState extends State<MealPlannerWidget>
                                                                                                 ),
                                                                                               ),
                                                                                               Text(
-                                                                                                '${valueOrDefault<String>(
-                                                                                                  mondayMealItem.adjustedCalories?.toString(),
-                                                                                                  '0',
-                                                                                                )} kcal',
+                                                                                                '${functions.smartFormatNumber(mondayMealItem.adjustedCalories)} kcal',
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                       font: GoogleFonts.poppins(
                                                                                                         fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,

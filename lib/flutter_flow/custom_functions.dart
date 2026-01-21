@@ -253,3 +253,48 @@ List<dynamic>? restrictListJson(List<dynamic>? list) {
   if (list == null) return null; // Return null if the input list is null
   return list.take(10).toList(); // Return the first 10 items as a new list
 }
+
+String? formatIngredientQuantity(
+  double? value,
+  String? unit,
+) {
+  if (value == null) return '0';
+
+  String formattedValue;
+
+  // Si c'est un entier (2.0, 5.0, etc.)
+  if (value == value.toInt()) {
+    formattedValue = value.toInt().toString();
+  }
+  // Sinon garde les décimales (max 2)
+  else {
+    formattedValue = value.toStringAsFixed(2);
+
+    // Supprimer les zéros inutiles à droite (2.50 → 2.5)
+    formattedValue = formattedValue.replaceAll(RegExp(r'0*$'), '');
+
+    // Supprimer le point si plus de décimales (2. → 2)
+    formattedValue = formattedValue.replaceAll(RegExp(r'\.$'), '');
+  }
+
+  // Ajouter l'unité si présente
+  if (unit != null && unit.isNotEmpty) {
+    return '$formattedValue $unit';
+  }
+
+  return formattedValue;
+}
+
+String? smartFormatNumber(double? value) {
+  if (value == null) return '0';
+
+  if (value == value.toInt()) {
+    return value.toInt().toString();
+  }
+
+  String formatted = value.toStringAsFixed(2);
+  formatted = formatted.replaceAll(RegExp(r'0*$'), '');
+  formatted = formatted.replaceAll(RegExp(r'\.$'), '');
+
+  return formatted;
+}

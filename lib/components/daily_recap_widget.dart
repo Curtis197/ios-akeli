@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -151,7 +152,7 @@ class _DailyRecapWidgetState extends State<DailyRecapWidget> {
                                     ),
                               ),
                               Text(
-                                '${widget.track?.consumedCalories?.toString()} kcal / ${widget.track?.targetCalorie?.toString()} kcal',
+                                '${functions.smartFormatNumber(widget.track?.consumedCalories)} kcal / ${functions.smartFormatNumber(widget.track?.targetCalorie)} kcal',
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
@@ -243,7 +244,7 @@ class _DailyRecapWidgetState extends State<DailyRecapWidget> {
                                     ),
                               ),
                               Text(
-                                '${widget.track?.consumedProtein?.toString()} g',
+                                '${functions.smartFormatNumber(widget.track?.consumedProtein)} g',
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -311,7 +312,7 @@ class _DailyRecapWidgetState extends State<DailyRecapWidget> {
                                     ),
                               ),
                               Text(
-                                '${widget.track?.consumedCarbs?.toString()} g',
+                                '${functions.smartFormatNumber(widget.track?.consumedCarbs)} g',
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -379,7 +380,7 @@ class _DailyRecapWidgetState extends State<DailyRecapWidget> {
                                     ),
                               ),
                               Text(
-                                '${widget.track?.consumedFat?.toString()} g',
+                                '${functions.smartFormatNumber(widget.track?.consumedFat)} g',
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -526,9 +527,10 @@ class _DailyRecapWidgetState extends State<DailyRecapWidget> {
                                         ),
                                         Text(
                                           valueOrDefault<String>(
-                                            containerMealConsumedRow
-                                                ?.mealsPlanned
-                                                ?.toString(),
+                                            functions.smartFormatNumber(
+                                                containerMealConsumedRow
+                                                    ?.mealsPlanned
+                                                    ?.toDouble()),
                                             '0',
                                           ),
                                           style: FlutterFlowTheme.of(context)

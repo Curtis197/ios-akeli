@@ -882,7 +882,7 @@ class _MealDetailWidgetState extends State<MealDetailWidget> {
                                                                     8.0,
                                                                     0.0),
                                                         child: Text(
-                                                          '${mealDetailMealRow.adjustedCalories?.toString()} kcal',
+                                                          '${functions.smartFormatNumber(mealDetailMealRow.adjustedCalories)} kcal',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -960,7 +960,7 @@ class _MealDetailWidgetState extends State<MealDetailWidget> {
                                                                     8.0,
                                                                     0.0),
                                                         child: Text(
-                                                          '${mealDetailMealRow.adjustedProtein?.toString()} g protéine',
+                                                          '${functions.smartFormatNumber(mealDetailMealRow.adjustedProtein)} g protéine',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -1038,7 +1038,7 @@ class _MealDetailWidgetState extends State<MealDetailWidget> {
                                                                     8.0,
                                                                     0.0),
                                                         child: Text(
-                                                          '${mealDetailMealRow.adjustedCarbs?.toString()} g de glucide',
+                                                          '${functions.smartFormatNumber(mealDetailMealRow.adjustedCarbs)} g de glucide',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -1116,7 +1116,7 @@ class _MealDetailWidgetState extends State<MealDetailWidget> {
                                                                     8.0,
                                                                     0.0),
                                                         child: Text(
-                                                          '${mealDetailMealRow.adjustedFat?.toString()} g de lipide',
+                                                          '${functions.smartFormatNumber(mealDetailMealRow.adjustedFat)} g de lipide',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -1484,12 +1484,12 @@ class _MealDetailWidgetState extends State<MealDetailWidget> {
                                                           Text(
                                                             valueOrDefault<
                                                                 String>(
-                                                              functions
-                                                                  .newCustomFunction(
-                                                                      listViewMealIngredientsRow
-                                                                          .adjustedQuantity)
-                                                                  .toString(),
-                                                              '1',
+                                                              functions.formatIngredientQuantity(
+                                                                  listViewMealIngredientsRow
+                                                                      .adjustedQuantity,
+                                                                  listViewMealIngredientsRow
+                                                                      .unit),
+                                                              '1 g',
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1518,48 +1518,6 @@ class _MealDetailWidgetState extends State<MealDetailWidget> {
                                                                   fontStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .titleMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
-                                                        if ((listViewMealIngredientsRow
-                                                                        .unit !=
-                                                                    null &&
-                                                                listViewMealIngredientsRow
-                                                                        .unit !=
-                                                                    '') &&
-                                                            (listViewMealIngredientsRow
-                                                                    .unit !=
-                                                                'sans unité'))
-                                                          Text(
-                                                            listViewMealIngredientsRow
-                                                                .unit!,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondary,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
                                                                       .fontStyle,
                                                                 ),
                                                           ),

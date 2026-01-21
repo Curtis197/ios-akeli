@@ -154,11 +154,25 @@ class _WeeklyProrgressionWidgetState extends State<WeeklyProrgressionWidget>
                         ),
                   ),
                   Text(
-                    'Du ${dateTimeFormat(
+                    '${FFLocalizations.of(context).getVariableText(
+                      frText: 'Du ',
+                      enText: 'From ',
+                      deText: '',
+                      lnText: '',
+                      bmText: '',
+                      woText: '',
+                    )}${dateTimeFormat(
                       "MMMMEEEEd",
                       annualHouseHoldContainerWeeklyUserTrackRow?.startDate,
                       locale: FFLocalizations.of(context).languageCode,
-                    )} au ${dateTimeFormat(
+                    )}${FFLocalizations.of(context).getVariableText(
+                      frText: 'Au ',
+                      enText: 'To ',
+                      deText: '',
+                      lnText: '',
+                      bmText: '',
+                      woText: '',
+                    )}${dateTimeFormat(
                       "MMMMEEEEd",
                       annualHouseHoldContainerWeeklyUserTrackRow?.endDate,
                       locale: FFLocalizations.of(context).languageCode,

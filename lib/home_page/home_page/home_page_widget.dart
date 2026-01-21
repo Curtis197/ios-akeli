@@ -2081,10 +2081,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                                                       ),
                                                                                                     ),
                                                                                                     Text(
-                                                                                                      '${valueOrDefault<String>(
-                                                                                                        containerVarItem.adjustedCalories?.toString(),
-                                                                                                        '0',
-                                                                                                      )} kcal',
+                                                                                                      '${functions.smartFormatNumber(containerVarItem.adjustedCalories)} kcal',
                                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                             font: GoogleFonts.poppins(
                                                                                                               fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
