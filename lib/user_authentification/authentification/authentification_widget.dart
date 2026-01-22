@@ -1359,7 +1359,7 @@ class _AuthentificationWidgetState extends State<AuthentificationWidget>
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '4xagb2vq' /* Password */,
+                                                        '4xagb2vq' /* Mot de pase */,
                                                       ),
                                                       labelStyle:
                                                           FlutterFlowTheme.of(

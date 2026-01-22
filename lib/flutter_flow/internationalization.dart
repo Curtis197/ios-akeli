@@ -3771,7 +3771,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'wo': '',
     },
     '4xagb2vq': {
-      'fr': 'Password',
+      'fr': 'Mot de pase',
       'bm': '',
       'de': 'Passwort',
       'en': 'Password',

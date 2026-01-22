@@ -618,8 +618,7 @@ class _InscriptionpageWidgetState extends State<InscriptionpageWidget> {
                                                               child: Checkbox(
                                                                 value: _model
                                                                         .checkboxRGPDValue ??=
-                                                                    containerUsersRow!
-                                                                        .cgu!,
+                                                                    false,
                                                                 onChanged:
                                                                     (newValue) async {
                                                                   safeSetState(() =>
@@ -783,8 +782,7 @@ class _InscriptionpageWidgetState extends State<InscriptionpageWidget> {
                                                               child: Checkbox(
                                                                 value: _model
                                                                         .checkboxCGUValue ??=
-                                                                    containerUsersRow!
-                                                                        .confidentiality!,
+                                                                    false,
                                                                 onChanged:
                                                                     (newValue) async {
                                                                   safeSetState(() =>
@@ -930,8 +928,10 @@ class _InscriptionpageWidgetState extends State<InscriptionpageWidget> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            if (!(_model.checkboxRGPDValue! &&
-                                                _model.checkboxCGUValue!))
+                                            if (!((_model.checkboxRGPDValue ==
+                                                    true) &&
+                                                (_model.checkboxCGUValue ==
+                                                    true)))
                                               FFButtonWidget(
                                                 onPressed: () {
                                                   print('Button pressed ...');
@@ -992,8 +992,10 @@ class _InscriptionpageWidgetState extends State<InscriptionpageWidget> {
                                                           8.0),
                                                 ),
                                               ),
-                                            if (_model.checkboxRGPDValue! &&
-                                                _model.checkboxCGUValue!)
+                                            if ((_model.checkboxRGPDValue ==
+                                                    true) &&
+                                                (_model.checkboxCGUValue ==
+                                                    true))
                                               FFButtonWidget(
                                                 onPressed: () {
                                                   print('Button pressed ...');
