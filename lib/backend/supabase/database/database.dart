@@ -38,6 +38,7 @@ export 'tables/comment_like.dart';
 export 'tables/referral_view.dart';
 export 'tables/message_time.dart';
 export 'tables/receipe_tags.dart';
+export 'tables/support.dart';
 export 'tables/creator_food_specialty.dart';
 export 'tables/ai_plan_feedback.dart';
 export 'tables/temporary_receipe.dart';

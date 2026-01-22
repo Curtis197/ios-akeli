@@ -15,6 +15,7 @@ import '/index.dart';
 import 'dart:async';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -98,180 +99,183 @@ class _InscriptionpageWidgetState extends State<InscriptionpageWidget> {
                               PageController(initialPage: 0),
                           scrollDirection: Axis.horizontal,
                           children: [
-                            SingleChildScrollView(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  SingleChildScrollView(
+                            AuthUserStreamWidget(
+                              builder: (context) =>
+                                  FutureBuilder<List<UsersRow>>(
+                                future: UsersTable().querySingleRow(
+                                  queryFn: (q) => q.eqOrNull(
+                                    'id',
+                                    valueOrDefault(currentUserDocument?.id, 0),
+                                  ),
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: SpinKitDoubleBounce(
+                                          color: FlutterFlowTheme.of(context)
+                                              .tertiary,
+                                          size: 50.0,
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<UsersRow> columnUsersRowList =
+                                      snapshot.data!;
+
+                                  final columnUsersRow =
+                                      columnUsersRowList.isNotEmpty
+                                          ? columnUsersRowList.first
+                                          : null;
+
+                                  return SingleChildScrollView(
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          MainAxisAlignment.start,
                                       children: [
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                              child: Image.network(
-                                                'https://jfbfymiyqlyciapfloug.supabase.co/storage/v1/object/public/website/20250905_1032_Feuille%20et%20Fond%20Vert_remix_01k4cfzf80es2vmmcjs01fdyvt.png',
-                                                width: 50.0,
-                                                height: 50.0,
-                                                fit: BoxFit.cover,
+                                        SingleChildScrollView(
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                    child: Image.network(
+                                                      'https://jfbfymiyqlyciapfloug.supabase.co/storage/v1/object/public/website/20250905_1032_Feuille%20et%20Fond%20Vert_remix_01k4cfzf80es2vmmcjs01fdyvt.png',
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'kh5oy7br' /*  AKELI */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineMedium
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .outfit(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ],
                                               ),
-                                            ),
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'kh5oy7br' /*  AKELI */,
-                                              ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .headlineMedium
-                                                  .override(
-                                                    font: GoogleFonts.outfit(
+                                              Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'xo5x2qya' /* Bienvenue dans votre applicati... */,
+                                                ),
+                                                textAlign: TextAlign.center,
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleLarge
+                                                    .override(
+                                                      font: GoogleFonts.outfit(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleLarge
+                                                                .fontStyle,
+                                                      ),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      letterSpacing: 0.0,
                                                       fontWeight:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .headlineMedium
+                                                              .titleLarge
                                                               .fontWeight,
                                                       fontStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .headlineMedium
+                                                              .titleLarge
                                                               .fontStyle,
                                                     ),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .headlineMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .headlineMedium
-                                                            .fontStyle,
-                                                  ),
-                                            ),
-                                          ],
-                                        ),
-                                        Text(
-                                          FFLocalizations.of(context).getText(
-                                            'xo5x2qya' /* Bienvenue dans votre applicati... */,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleLarge
-                                              .override(
-                                                font: GoogleFonts.outfit(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleLarge
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleLarge
-                                                          .fontStyle,
-                                                ),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleLarge
-                                                        .fontStyle,
                                               ),
-                                        ),
-                                        Text(
-                                          FFLocalizations.of(context).getText(
-                                            'l1b2uwpj' /* Avant de commencer, veuillez a... */,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelLarge
-                                              .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontStyle,
+                                              Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'l1b2uwpj' /* Avant de commencer, veuillez a... */,
                                                 ),
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
-                                              ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.all(10.0),
-                                          child: AuthUserStreamWidget(
-                                            builder: (context) =>
-                                                FutureBuilder<List<UsersRow>>(
-                                              future:
-                                                  UsersTable().querySingleRow(
-                                                queryFn: (q) => q.eqOrNull(
-                                                  'id',
-                                                  valueOrDefault(
-                                                      currentUserDocument?.id,
-                                                      0),
-                                                ),
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          SpinKitDoubleBounce(
-                                                        color:
+                                                textAlign: TextAlign.center,
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .labelLarge
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .tertiary,
-                                                        size: 50.0,
+                                                                .labelLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .fontStyle,
                                                       ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLarge
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLarge
+                                                              .fontStyle,
                                                     ),
-                                                  );
-                                                }
-                                                List<UsersRow>
-                                                    containerUsersRowList =
-                                                    snapshot.data!;
-
-                                                final containerUsersRow =
-                                                    containerUsersRowList
-                                                            .isNotEmpty
-                                                        ? containerUsersRowList
-                                                            .first
-                                                        : null;
-
-                                                return Container(
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.all(10.0),
+                                                child: Container(
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -918,147 +922,183 @@ class _InscriptionpageWidgetState extends State<InscriptionpageWidget> {
                                                           height: 20.0)),
                                                     ),
                                                   ),
-                                                );
-                                              },
-                                            ),
-                                          ),
-                                        ),
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            if (!((_model.checkboxRGPDValue ==
-                                                    true) &&
-                                                (_model.checkboxCGUValue ==
-                                                    true)))
-                                              FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
-                                                },
-                                                text:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  '2fq1ozi2' /* Confirmer */,
                                                 ),
-                                                options: FFButtonOptions(
-                                                  height: 40.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontStyle,
-                                                        ),
+                                              ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  if ((_model.checkboxRGPDValue ==
+                                                          true) &&
+                                                      (_model.checkboxCGUValue ==
+                                                          true))
+                                                    FFButtonWidget(
+                                                      onPressed: () {
+                                                        print(
+                                                            'Button pressed ...');
+                                                      },
+                                                      text: FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '2fq1ozi2' /* Confirmer */,
+                                                      ),
+                                                      options: FFButtonOptions(
+                                                        height: 40.0,
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    0.0),
+                                                        iconPadding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .secondaryText,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
+                                                                .alternate,
+                                                        textStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                        elevation: 0.0,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
-                                                  elevation: 0.0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                              ),
-                                            if ((_model.checkboxRGPDValue ==
-                                                    true) &&
-                                                (_model.checkboxCGUValue ==
-                                                    true))
-                                              FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
-                                                },
-                                                text:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  '4basb116' /* Confirmer */,
-                                                ),
-                                                options: FFButtonOptions(
-                                                  height: 40.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontStyle,
-                                                        ),
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
+                                                    ),
+                                                  if ((_model.checkboxRGPDValue ==
+                                                          true) &&
+                                                      (_model.checkboxCGUValue ==
+                                                          true))
+                                                    FFButtonWidget(
+                                                      onPressed: () async {
+                                                        await _model
+                                                            .pageViewController
+                                                            ?.nextPage(
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  300),
+                                                          curve: Curves.ease,
+                                                        );
+                                                        await UsersTable()
+                                                            .update(
+                                                          data: {
+                                                            'CGU': true,
+                                                            'confidentiality':
+                                                                true,
+                                                          },
+                                                          matchingRows:
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
+                                                            'user_id',
+                                                            currentUserUid,
+                                                          ),
+                                                        );
+
+                                                        safeSetState(() {});
+                                                      },
+                                                      text: FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '4basb116' /* Confirmer */,
                                                       ),
-                                                  elevation: 0.0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
+                                                      options: FFButtonOptions(
+                                                        height: 40.0,
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    0.0),
+                                                        iconPadding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: Colors
+                                                                      .white,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                        elevation: 0.0,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                    ),
+                                                ],
                                               ),
-                                          ],
+                                            ].divide(SizedBox(height: 20.0)),
+                                          ),
                                         ),
                                       ].divide(SizedBox(height: 20.0)),
                                     ),
-                                  ),
-                                ].divide(SizedBox(height: 20.0)),
+                                  );
+                                },
                               ),
                             ),
                             Padding(
@@ -1581,12 +1621,19 @@ class _InscriptionpageWidgetState extends State<InscriptionpageWidget> {
                                                   ),
                                                   focusNode:
                                                       _model.ageFocusNode,
-                                                  onFieldSubmitted: (_) async {
-                                                    _model.age = int.tryParse(
-                                                        _model.ageTextController
-                                                            .text);
-                                                    safeSetState(() {});
-                                                  },
+                                                  onChanged: (_) =>
+                                                      EasyDebounce.debounce(
+                                                    '_model.ageTextController',
+                                                    Duration(
+                                                        milliseconds: 2000),
+                                                    () async {
+                                                      _model.age = int.tryParse(
+                                                          _model
+                                                              .ageTextController
+                                                              .text);
+                                                      safeSetState(() {});
+                                                    },
+                                                  ),
                                                   autofocus: false,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
@@ -1743,8 +1790,9 @@ class _InscriptionpageWidgetState extends State<InscriptionpageWidget> {
                                                       .asValidator(context),
                                                 ),
                                               ),
-                                              if ((_model.age! < 16) ||
-                                                  (_model.age! > 99))
+                                              if ((_model.age != null) &&
+                                                  ((_model.age! < 16) ||
+                                                      (_model.age! > 99)))
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -2023,12 +2071,18 @@ class _InscriptionpageWidgetState extends State<InscriptionpageWidget> {
                                                     : '',
                                               ),
                                               focusNode: _model.weightFocusNode,
-                                              onFieldSubmitted: (_) async {
-                                                _model.weight = int.tryParse(
-                                                    _model.weightTextController
-                                                        .text);
-                                                safeSetState(() {});
-                                              },
+                                              onChanged: (_) =>
+                                                  EasyDebounce.debounce(
+                                                '_model.weightTextController',
+                                                Duration(milliseconds: 2000),
+                                                () async {
+                                                  _model.weight = int.tryParse(
+                                                      _model
+                                                          .weightTextController
+                                                          .text);
+                                                  safeSetState(() {});
+                                                },
+                                              ),
                                               autofocus: false,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -2179,8 +2233,9 @@ class _InscriptionpageWidgetState extends State<InscriptionpageWidget> {
                                                   .asValidator(context),
                                             ),
                                           ),
-                                          if ((_model.weight! < 12) ||
-                                              (_model.weight! > 300))
+                                          if ((_model.weight != null) &&
+                                              ((_model.weight! < 35) ||
+                                                  (_model.weight! > 300)))
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -2342,12 +2397,18 @@ class _InscriptionpageWidgetState extends State<InscriptionpageWidget> {
                                                     : '',
                                               ),
                                               focusNode: _model.heightFocusNode,
-                                              onFieldSubmitted: (_) async {
-                                                _model.height = int.tryParse(
-                                                    _model.heightTextController
-                                                        .text);
-                                                safeSetState(() {});
-                                              },
+                                              onChanged: (_) =>
+                                                  EasyDebounce.debounce(
+                                                '_model.heightTextController',
+                                                Duration(milliseconds: 2000),
+                                                () async {
+                                                  _model.height = int.tryParse(
+                                                      _model
+                                                          .heightTextController
+                                                          .text);
+                                                  safeSetState(() {});
+                                                },
+                                              ),
                                               autofocus: false,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -2497,8 +2558,9 @@ class _InscriptionpageWidgetState extends State<InscriptionpageWidget> {
                                                   .asValidator(context),
                                             ),
                                           ),
-                                          if ((_model.height! < 100) ||
-                                              (_model.height! > 300))
+                                          if ((_model.height != null) &&
+                                              ((_model.height! < 100) ||
+                                                  (_model.height! > 300)))
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -2600,7 +2662,7 @@ class _InscriptionpageWidgetState extends State<InscriptionpageWidget> {
                                                             ''
                                                     ? columnUserHealthParameterRow!
                                                         .activityLevel!
-                                                    : ''),
+                                                    : 'Aucune (travail de bureau, peu de mouvement)'),
                                             optionHeight: 32.0,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)

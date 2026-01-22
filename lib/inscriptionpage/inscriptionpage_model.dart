@@ -41,6 +41,8 @@ class InscriptionpageModel extends FlutterFlowModel<InscriptionpageWidget> {
   bool? checkboxRGPDValue;
   // State field(s) for CheckboxCGU widget.
   bool? checkboxCGUValue;
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<UsersRow>? usersUpdateCguConfidentiality;
   // State field(s) for name widget.
   FocusNode? nameFocusNode;
   TextEditingController? nameTextController;

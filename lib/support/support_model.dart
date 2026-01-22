@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'support_widget.dart' show SupportWidget;
 import 'package:flutter/material.dart';
@@ -17,6 +18,17 @@ class SupportModel extends FlutterFlowModel<SupportWidget> {
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
+  bool isDataUploading_uploadDataAbs = false;
+  FFUploadedFile uploadedLocalFile_uploadDataAbs =
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
+
+  bool isDataUploading_uploadDataWjv = false;
+  FFUploadedFile uploadedLocalFile_uploadDataWjv =
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
+  String uploadedFileUrl_uploadDataWjv = '';
+
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  SupportRecord? newSupport;
 
   @override
   void initState(BuildContext context) {}

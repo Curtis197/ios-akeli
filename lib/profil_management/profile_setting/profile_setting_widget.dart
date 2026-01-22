@@ -194,7 +194,7 @@ class _ProfileSettingWidgetState extends State<ProfileSettingWidget> {
                                       Text(
                                         valueOrDefault<String>(
                                           profileSettingUsersRow?.userName,
-                                          'user_name',
+                                          'votre nom ',
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
@@ -226,7 +226,7 @@ class _ProfileSettingWidgetState extends State<ProfileSettingWidget> {
                                         child: Text(
                                           valueOrDefault<String>(
                                             profileSettingUsersRow?.userMail,
-                                            'user_mail',
+                                            'votre mail',
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -864,12 +864,32 @@ class _ProfileSettingWidgetState extends State<ProfileSettingWidget> {
                     Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          '4gxh7exz' /* Mention Légale */,
-                        ),
-                        style: FlutterFlowTheme.of(context).titleSmall.override(
-                              font: GoogleFonts.poppins(
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed(RgpdWidget.routeName);
+                        },
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            'm25zlylo' /* Politique de Confidentialité */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                font: GoogleFonts.poppins(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                letterSpacing: 0.0,
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .fontWeight,
@@ -877,52 +897,37 @@ class _ProfileSettingWidgetState extends State<ProfileSettingWidget> {
                                     .titleSmall
                                     .fontStyle,
                               ),
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontStyle,
-                            ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          'm25zlylo' /* Politique de Confidentialité */,
                         ),
-                        style: FlutterFlowTheme.of(context).titleSmall.override(
-                              font: GoogleFonts.poppins(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontStyle,
-                              ),
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontStyle,
-                            ),
                       ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(10.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          '30oulzh2' /* Condition générale d'utilisati... */,
-                        ),
-                        style: FlutterFlowTheme.of(context).titleSmall.override(
-                              font: GoogleFonts.poppins(
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed(CguWidget.routeName);
+                        },
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            '30oulzh2' /* Condition générale d'utilisati... */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                font: GoogleFonts.poppins(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                letterSpacing: 0.0,
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .fontWeight,
@@ -930,15 +935,7 @@ class _ProfileSettingWidgetState extends State<ProfileSettingWidget> {
                                     .titleSmall
                                     .fontStyle,
                               ),
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontStyle,
-                            ),
+                        ),
                       ),
                     ),
                   ],

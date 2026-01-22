@@ -318,6 +318,8 @@ dynamic deserializeParam<T>(
             return MessageTimeRow(data);
           case ReceipeTagsRow:
             return ReceipeTagsRow(data);
+          case SupportRow:
+            return SupportRow(data);
           case CreatorFoodSpecialtyRow:
             return CreatorFoodSpecialtyRow(data);
           case AiPlanFeedbackRow:

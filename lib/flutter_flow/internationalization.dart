@@ -889,14 +889,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ln': '',
       'wo': '',
     },
-    '4gxh7exz': {
-      'fr': 'Mention Légale',
-      'bm': '',
-      'de': 'Rechtlicher Hinweis',
-      'en': 'Legal Notice',
-      'ln': '',
-      'wo': '',
-    },
     'm25zlylo': {
       'fr': 'Politique de Confidentialité',
       'bm': '',

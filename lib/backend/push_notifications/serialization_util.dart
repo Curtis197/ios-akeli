@@ -228,6 +228,8 @@ T? getParameter<T>(Map<String, dynamic> data, String paramName) {
         return MessageTimeRow(json.decode(param) as Map<String, dynamic>) as T;
       case ReceipeTagsRow:
         return ReceipeTagsRow(json.decode(param) as Map<String, dynamic>) as T;
+      case SupportRow:
+        return SupportRow(json.decode(param) as Map<String, dynamic>) as T;
       case CreatorFoodSpecialtyRow:
         return CreatorFoodSpecialtyRow(
             json.decode(param) as Map<String, dynamic>) as T;
