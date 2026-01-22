@@ -2851,7 +2851,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                                                                   child: Row(
                                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                                     children: [
-                                                                                                                      if (tousContainerVarItem.quantity != null)
+                                                                                                                      if ((tousContainerVarItem.quantity != null) && (tousContainerVarItem.quantity != 0.0))
                                                                                                                         Text(
                                                                                                                           valueOrDefault<String>(
                                                                                                                             functions.formatIngredientQuantity(tousContainerVarItem.quantity, tousContainerVarItem.unit),
@@ -3075,7 +3075,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                                                                 child: Row(
                                                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                                                   children: [
-                                                                                                                    if (acheteContainerVarItem.quantity != null)
+                                                                                                                    if ((acheteContainerVarItem.quantity != null) && (acheteContainerVarItem.quantity != 0.0))
                                                                                                                       Text(
                                                                                                                         valueOrDefault<String>(
                                                                                                                           functions.formatIngredientQuantity(acheteContainerVarItem.quantity, acheteContainerVarItem.unit),
@@ -3298,7 +3298,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                                                                 child: Row(
                                                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                                                   children: [
-                                                                                                                    if (restantContainerVarItem.quantity != null)
+                                                                                                                    if ((restantContainerVarItem.quantity != null) && (restantContainerVarItem.quantity != 0.0))
                                                                                                                       Text(
                                                                                                                         valueOrDefault<String>(
                                                                                                                           functions.formatIngredientQuantity(restantContainerVarItem.quantity, restantContainerVarItem.unit),

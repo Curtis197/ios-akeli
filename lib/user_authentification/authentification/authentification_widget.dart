@@ -1657,7 +1657,7 @@ class _AuthentificationWidgetState extends State<AuthentificationWidget>
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
                                                       if (_model
-                                                          .emailAddressCreateTextController
+                                                          .emailAddressTextController
                                                           .text
                                                           .isEmpty) {
                                                         ScaffoldMessenger.of(
@@ -1674,7 +1674,7 @@ class _AuthentificationWidgetState extends State<AuthentificationWidget>
                                                       await authManager
                                                           .resetPassword(
                                                         email: _model
-                                                            .emailAddressCreateTextController
+                                                            .emailAddressTextController
                                                             .text,
                                                         context: context,
                                                       );

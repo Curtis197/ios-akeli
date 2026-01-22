@@ -522,7 +522,7 @@ class _AddMealWidgetState extends State<AddMealWidget> {
                     if ((_model.customMeal?.succeeded ?? true)) {
                       _model.updatedShopList2 =
                           await SupabaseGroup.mealPlanShoppingListCall.call(
-                        mealPlanId: widget.mea,
+                        mealPlanId: FFAppState().mealPlan,
                         updateMode: 'replace',
                         userId: valueOrDefault(currentUserDocument?.id, 0),
                       );

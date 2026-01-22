@@ -156,7 +156,6 @@ final parametersBuilderMap =
         },
       ),
   'Authentification': ParameterData.none(),
-  'AuthentificationCopy': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

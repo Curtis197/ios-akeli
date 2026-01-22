@@ -3803,25 +3803,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'wo': '',
     },
   },
-  // AuthentificationCopy
-  {
-    'eb62w509': {
-      'fr': 'Hello World',
-      'bm': '',
-      'de': 'Hallo Welt',
-      'en': 'Hello World',
-      'ln': '',
-      'wo': '',
-    },
-    'b6yhb01g': {
-      'fr': 'Home',
-      'bm': '',
-      'de': 'Heim',
-      'en': 'Home',
-      'ln': '',
-      'wo': '',
-    },
-  },
   // WeightGraph
   {
     'na8hlggd': {

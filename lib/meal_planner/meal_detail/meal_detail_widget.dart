@@ -1478,9 +1478,12 @@ class _MealDetailWidgetState extends State<MealDetailWidget> {
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
-                                                        if (listViewMealIngredientsRow
-                                                                .adjustedQuantity !=
-                                                            null)
+                                                        if ((listViewMealIngredientsRow
+                                                                    .adjustedQuantity !=
+                                                                null) &&
+                                                            (listViewMealIngredientsRow
+                                                                    .adjustedQuantity !=
+                                                                0.0))
                                                           Text(
                                                             valueOrDefault<
                                                                 String>(
@@ -2003,7 +2006,7 @@ class _MealDetailWidgetState extends State<MealDetailWidget> {
                                                     MediaQuery.viewInsetsOf(
                                                         context),
                                                 child: Container(
-                                                  height: 350.0,
+                                                  height: 500.0,
                                                   child: AddMealWidget(
                                                     meal: mealDetailMealRow.id,
                                                     user: valueOrDefault(

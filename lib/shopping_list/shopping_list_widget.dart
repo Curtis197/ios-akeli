@@ -511,8 +511,8 @@ class _ShoppingListWidgetState extends State<ShoppingListWidget> {
                                                                             MainAxisSize.max,
                                                                         children:
                                                                             [
-                                                                          if (tousContainerVarItem.quantity !=
-                                                                              null)
+                                                                          if ((tousContainerVarItem.quantity != null) &&
+                                                                              (tousContainerVarItem.quantity != 0.0))
                                                                             Text(
                                                                               valueOrDefault<String>(
                                                                                 functions.formatIngredientQuantity(tousContainerVarItem.quantity, tousContainerVarItem.unit),
@@ -867,8 +867,10 @@ class _ShoppingListWidgetState extends State<ShoppingListWidget> {
                                                                               .max,
                                                                       children:
                                                                           [
-                                                                        if (acheteContainerVarItem.quantity !=
-                                                                            null)
+                                                                        if ((acheteContainerVarItem.quantity !=
+                                                                                null) &&
+                                                                            (acheteContainerVarItem.quantity !=
+                                                                                0.0))
                                                                           Text(
                                                                             valueOrDefault<String>(
                                                                               functions.formatIngredientQuantity(acheteContainerVarItem.quantity, acheteContainerVarItem.unit),
@@ -1236,25 +1238,25 @@ class _ShoppingListWidgetState extends State<ShoppingListWidget> {
                                                                               .max,
                                                                       children:
                                                                           [
-                                                                        Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            functions.formatIngredientQuantity(restantContainerVarItem.quantity,
-                                                                                restantContainerVarItem.unit),
-                                                                            '1 g',
-                                                                          ),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .labelMedium
-                                                                              .override(
-                                                                                font: GoogleFonts.poppins(
+                                                                        if ((restantContainerVarItem.quantity !=
+                                                                                null) &&
+                                                                            (restantContainerVarItem.quantity !=
+                                                                                0.0))
+                                                                          Text(
+                                                                            valueOrDefault<String>(
+                                                                              functions.formatIngredientQuantity(restantContainerVarItem.quantity, restantContainerVarItem.unit),
+                                                                              '1 g',
+                                                                            ),
+                                                                            style: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                  font: GoogleFonts.poppins(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                  ),
+                                                                                  letterSpacing: 0.0,
                                                                                   fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                   fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                 ),
-                                                                                letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                              ),
-                                                                        ),
+                                                                          ),
                                                                         Text(
                                                                           valueOrDefault<
                                                                               String>(

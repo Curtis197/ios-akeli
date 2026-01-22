@@ -37,5 +37,3 @@ export '/condition/condition_widget.dart' show ConditionWidget;
 export '/receipe_detail/receipe_detail_widget.dart' show ReceipeDetailWidget;
 export '/user_authentification/authentification/authentification_widget.dart'
     show AuthentificationWidget;
-export '/user_authentification/authentification_copy/authentification_copy_widget.dart'
-    show AuthentificationCopyWidget;
